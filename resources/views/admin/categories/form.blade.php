@@ -21,6 +21,7 @@
                 <h2 class="form-signin-heading">{{$entity->title or 'Новая категория'}}</h2>
                 @include('admin.fields.text', ['field'=>'title', 'name'=>'Title'])
                 @include('admin.fields.text', ['field'=>'slug', 'name'=>'Slug'])
+                
               
               <button class="btn btn-lg btn-primary btn-block" type="submit" value="save">Save</button>
             </form>

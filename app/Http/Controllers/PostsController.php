@@ -27,6 +27,7 @@ class PostsController extends Controller
     public function create()
     {
         $categories = Category::all();
+        //dd($categories);
         return view('admin.posts.form', compact('categories'));
     }
 
@@ -38,7 +39,15 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' =>'required',
+            'slug' =>'required',
+            'body' =>'required',
+            ]);
+
+        Post::create($request->all());
+
+        return redirect()->route('posts.index');
     }
 
     /**

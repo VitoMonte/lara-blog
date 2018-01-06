@@ -11,7 +11,7 @@
 			<ul>
 				<li>post->id: {{ $post->id }}</li>
 				<li>post->title: {{ $post->title }}</li>
-				<li>ategory->posts->count: {{ $post->posts->count() }}</li>
+				<li>posts->count: {{ $post->count() }}</li>
 				<li>
 					<form action="{{ route('posts.destroy', $post->id) }}" method="post">
 						<a type="btn" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}">редактировать</a>
